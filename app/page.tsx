@@ -6,9 +6,9 @@ export default function Home() {
     /\.txt/,
   );
   // In Webpack, logs:
-  //     [ './parent/file.txt' ]
+  //     "File contents\n"
   // In Turbopack, logs:
-  //     [ './file.txt' ]
-  console.log(translationsContext.keys());
+  //     {"default":"File contents\n"}
+  console.log(JSON.stringify(translationsContext(translationsContext.keys()[0])));
   return null;
 }
